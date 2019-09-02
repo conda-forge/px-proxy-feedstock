@@ -12,9 +12,11 @@ source:
     - setup.patch
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   skip: True  # [not win]
+  entry_points:
+    - px = px:main
 
 requirements:
   host:
