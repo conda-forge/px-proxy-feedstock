@@ -3,7 +3,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version|replace("-", "") }}
+  version: {{ version|replace("-", ".") }}
 
 source:
   url: https://github.com/genotrance/{{ name[:2] }}/archive/{{ version }}.tar.gz
