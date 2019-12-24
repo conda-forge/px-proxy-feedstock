@@ -3,13 +3,11 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ version|replace("-", "") }}
 
 source:
   url: https://github.com/genotrance/{{ name[:2] }}/archive/{{ version }}.tar.gz
   sha256: 9c293b0247c9440db5ff0bfe6122eafa9551eb72ff4693b2be1b3525e9f2312f
-  patches:
-    - setup.patch
 
 build:
   number: 0
@@ -25,7 +23,9 @@ requirements:
   run:
     - python
     - futures  # [py2k]
+    - keyring
     - netaddr
+    - ntlm-auth
     - psutil
     - pywin32
     - winkerberos
