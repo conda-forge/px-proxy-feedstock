@@ -1,18 +1,16 @@
 {% set name = "px-proxy" %}
-{% set version = "0.4.0" %}
+{% set version = "2018-11-20" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ version|replace("-", ".") }}
 
 source:
-  url: https://github.com/genotrance/{{ name[:2] }}/archive/v{{ version }}.tar.gz
-  sha256: b6546e70483461357033b3918ee2b72f812c34025b030b37db2059eb68a4f459
-  patches:
-    - setup.patch
+  url: https://github.com/genotrance/{{ name[:2] }}/archive/{{ version }}.tar.gz
+  sha256: 9c293b0247c9440db5ff0bfe6122eafa9551eb72ff4693b2be1b3525e9f2312f
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
   skip: True  # [not win]
   entry_points:
@@ -25,7 +23,9 @@ requirements:
   run:
     - python
     - futures  # [py2k]
+    - keyring
     - netaddr
+    - ntlm-auth
     - psutil
     - pywin32
     - winkerberos
