@@ -1,5 +1,5 @@
 {% set name = "px-proxy" %}
-{% set version = "2018-11-20" %}
+{% set version = "2019-05-20" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/genotrance/{{ name[:2] }}/archive/{{ version }}.tar.gz
-  sha256: 9c293b0247c9440db5ff0bfe6122eafa9551eb72ff4693b2be1b3525e9f2312f
+  sha256: 158c1c517a214cacbbb8421c03b54507595f796559ffd5482e9f632e2c6fbfa3
 
 build:
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [not win]
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [not win]
   entry_points:
     - px = px:main
 
@@ -39,7 +39,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'An HTTP proxy server to automatically authenticate through an NTLM proxy'
+  summary: An HTTP proxy server to automatically authenticate through an NTLM proxy
   description: |
     Px is a HTTP(s) proxy server that allows applications to authenticate through
     an NTLM or Windows Kerberos authenticated proxy server, typically used in
