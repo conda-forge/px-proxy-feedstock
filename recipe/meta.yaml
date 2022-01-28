@@ -3,16 +3,16 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version|replace("-", ".") }}
+  version: {{ version|replace("-", "") }}
 
 source:
   url: https://github.com/genotrance/{{ name[:2] }}/archive/{{ version }}.tar.gz
   sha256: 9c293b0247c9440db5ff0bfe6122eafa9551eb72ff4693b2be1b3525e9f2312f
 
 build:
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [not win]
+  number: 3
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [not win]
   entry_points:
     - px = px:main
 
