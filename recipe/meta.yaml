@@ -1,16 +1,16 @@
 {% set name = "px-proxy" %}
-{% set version = "2018-11-20" %}
+{% set version = "v0.5.0" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version|replace("-", "") }}
+  version: 20220127
 
 source:
   url: https://github.com/genotrance/{{ name[:2] }}/archive/{{ version }}.tar.gz
-  sha256: 9c293b0247c9440db5ff0bfe6122eafa9551eb72ff4693b2be1b3525e9f2312f
+  sha256: a830deaec80afc519873dffc4a0f45de6ce0aa26917dc4b9a3d85f34311568dd
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [not win]
   entry_points:
