@@ -23,6 +23,7 @@ requirements:
     - setuptools
   run:
     - keyring
+    - libcurl
     - netaddr
     - psutil
     - python
