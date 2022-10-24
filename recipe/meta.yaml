@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/genotrance/{{ name[:2] }}/archive/refs/tags/{{ version }}.tar.gz
   sha256: 0ae5ada81040d7a4debb56d2302dcb3e53ed565c5c122e22631031189f94f0c0
+  patches:
+    - libcurl-win-dll-path.patch
 
 build:
   number: 0
@@ -15,8 +17,6 @@ build:
   skip: true  # [not win]
   entry_points:
     - px = px.main:main
-  patches:
-    - libcurl-win-dll-path.patch
 
 requirements:
   host:
