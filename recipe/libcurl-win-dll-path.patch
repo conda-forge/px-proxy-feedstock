@@ -1,0 +1,14 @@
+diff --git a/px/libcurl/_platform/_windows/__init__.py b/px/libcurl/_platform/_windows/__init__.py
+index a03659805bad84c07002f3abdfd3e7379be46e08..0913c5a4eade010c3866671c4b7ca61c00979831 100644
+--- a/px/libcurl/_platform/_windows/__init__.py
++++ b/px/libcurl/_platform/_windows/__init__.py
+@@ -19,8 +19,7 @@ is_32bit = (sys.maxsize <= 2**32)
+ #     if DLL_PATH is None or DLL_PATH in ("", "None"):
+ #         raise ImportError()
+ # except ImportError:
+-DLL_PATH = os.path.join(libcurl_dir,
+-                        "libcurl.dll" if is_32bit else "libcurl-x64.dll")
++DLL_PATH = os.path.join(libcurl_dir, "libcurl.dll")
+ if not os.path.exists(DLL_PATH):
+     # Search PATH
+     import ctypes.util
