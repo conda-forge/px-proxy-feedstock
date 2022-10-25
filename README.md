@@ -192,4 +192,5 @@ Feedstock Maintainers
 
 * [@fcollonval](https://github.com/fcollonval/)
 * [@genotrance](https://github.com/genotrance/)
+* [@m-rossi](https://github.com/m-rossi/)
 
