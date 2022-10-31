@@ -12,9 +12,9 @@ source:
     - libcurl-win-dll-path.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [not win]
+  skip: true  # [linux]
   entry_points:
     - px = px.main:main
 
