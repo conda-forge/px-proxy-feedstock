@@ -1,5 +1,5 @@
 {% set name = "px-proxy" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/genotrance/{{ name[:2] }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 0ae5ada81040d7a4debb56d2302dcb3e53ed565c5c122e22631031189f94f0c0
+  sha256: 186b3b3d549c90219bc5eb4ba053b069472c6d509fd26bc0154bfaf025373303
   patches:
     - libcurl-win-dll-path.patch
 
