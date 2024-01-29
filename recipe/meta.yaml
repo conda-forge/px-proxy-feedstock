@@ -28,7 +28,7 @@ requirements:
     - netaddr
     - psutil
     - pyspnego
-    - python >=3.8.0
+    - python
     - python-dotenv
     - python-quickjs
 
