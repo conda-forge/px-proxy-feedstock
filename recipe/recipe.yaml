@@ -15,6 +15,7 @@ source:
 
 build:
   number: 2
+  noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
@@ -22,7 +23,7 @@ build:
 
 requirements:
   host:
-    - python
+    - python ${{ python_min }}.*
     - pip
     - setuptools
     - wheel
@@ -32,7 +33,7 @@ requirements:
     - netaddr
     - psutil
     - pyspnego
-    - python
+    - python >=${{ python_min }}
     - python-dotenv
     - python-quickjs
 
@@ -41,7 +42,13 @@ tests:
       imports:
         - px
       pip_check: true
-  - script:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
       - px -h
 
 about:
